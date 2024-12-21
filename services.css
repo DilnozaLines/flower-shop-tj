@@ -1,0 +1,289 @@
+/* Подключение Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #ffb6c1; /* Нежно-розовый */
+    --secondary-color: #333; /* Темно-серый */
+    --accent-color: #ff1493; /* Яркий розовый */
+    --light-background: #f9f9f9;
+    --form-background: #f8f8f8; /* Светло-серый фон для форм */
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-background);
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Занимает всю высоту окна */
+    align-items: center; /* Выравнивает содержимое по центру по вертикали */
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgb(0, 0, 0);
+    text-align: center; /* Центрирует заголовки */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: center; /* Центрирует текст */
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #c70039; /* Темнее розовый при наведении  -  замена darken */
+}
+
+ul, ol {
+    padding: 0;
+    list-style: none;
+}
+
+img{
+    height: 2cm;
+    width:4cm;
+    position: center;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    position: relative;
+    display: block;
+    padding: 0.8rem 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 14px;
+    width: 100%;
+}
+/* Стили для основного содержимого */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#services h2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.service {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.service h3 {
+    font-family: 'Arial', sans-serif;
+    color: #ff9bba;
+}
+
+.service p {
+    font-family: 'Arial', sans-serif;
+    color: #666;
+}
+
+.service img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    background-color: #ff8fb8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-btn:hover {
+    background-color: #b30000;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+}
+
+.contacts {
+    margin-top: 10px;
+}
+
+.contacts p {
+    margin: 5px 0;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.modal-content h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #666;
+}
+
+.modal-content input,
+.modal-content textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-content button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
